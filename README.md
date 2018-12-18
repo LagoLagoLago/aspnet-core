@@ -32,14 +32,14 @@ Create & download your project from https://aspnetboilerplate.com/Templates
 
 [MIT](LICENSE).
 
-±Ø±¸Ìõ¼ş
-nuget ÅäÖÃ
-Ê×ÏÈÉèÖÃ¿ª·¢»·¾³£¬´ò¿ªnuget³ÌĞò°ü¹ÜÀíÆ÷£¬Ìí¼ÓÒ»¸önugetÔ´¡£
-
+å¿…å¤‡æ¡ä»¶
+nuget é…ç½®
+é¦–å…ˆè®¾ç½®å¼€å‘ç¯å¢ƒï¼Œæ‰“å¼€nugetç¨‹åºåŒ…ç®¡ç†å™¨ï¼Œæ·»åŠ ä¸€ä¸ªnugetæºã€‚
+![](_screenshots/nugetConfig.png)
 https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json
-ÈçÍ¼ËùÊ¾£º Nuget Option È»ºóÉú³É½â¾ö·½°¸¡£
+å¦‚å›¾æ‰€ç¤ºï¼š Nuget Option ç„¶åç”Ÿæˆè§£å†³æ–¹æ¡ˆã€‚
 
-Êı¾İ¿âµÄÉú³É
-Ñ¡ÔñEntityFrameworkCore²ã£¬×÷ÎªÄ¬ÈÏ Generator Data Base Ö´ĞĞ
-
+æ•°æ®åº“çš„ç”Ÿæˆ
+é€‰æ‹©EntityFrameworkCoreå±‚ï¼Œä½œä¸ºé»˜è®¤ Generator Data Base æ‰§è¡Œ
+![](_screenshots/updateDatabase.png)
 update-database
