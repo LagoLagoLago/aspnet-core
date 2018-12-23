@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using Abp.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using Abp.Application.Services.Dto;
 using Abp.Domain.Entities.Auditing;
-using MPACore.PhoneBook.PhoneBooks.PhoneNumbers;
 
-namespace MPACore.PhoneBook.PhoneBooks.Persons
+namespace MPACore.PhoneBook.PhoneBooks.Dto
 {
     /// <summary>
-    /// 
+    /// 编辑新增用
     /// </summary>
-    public class Person : FullAuditedEntity
+    public class PersonEditDto
     {
+
+        public int? Id { get; set; }
+
         /// <summary>
         /// 姓名
         /// </summary>
@@ -32,10 +31,5 @@ namespace MPACore.PhoneBook.PhoneBooks.Persons
         /// </summary>
         [MaxLength(200)]
         public string Address { get; set; }
-
-        /// <summary>
-        /// 电话号码的导航属性
-        /// </summary>
-        public ICollection<PhoneNumber> PhoneNumbers { get; set; }
     }
 }
