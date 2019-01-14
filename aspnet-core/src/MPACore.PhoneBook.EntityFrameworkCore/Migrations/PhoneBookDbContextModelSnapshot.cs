@@ -1060,15 +1060,29 @@ namespace MPACore.PhoneBook.Migrations
 
             modelBuilder.Entity("MPACore.PhoneBook.PhoneBooks.Persons.Person", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address")
                         .HasMaxLength(200);
 
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
                     b.Property<string>("EmailAddress")
                         .HasMaxLength(80);
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -1093,13 +1107,11 @@ namespace MPACore.PhoneBook.Migrations
 
                     b.Property<int>("PersonId");
 
-                    b.Property<long?>("PersonId1");
-
                     b.Property<int>("Type");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PersonId1");
+                    b.HasIndex("PersonId");
 
                     b.ToTable("PhoneNumber","PB");
                 });
@@ -1277,8 +1289,9 @@ namespace MPACore.PhoneBook.Migrations
             modelBuilder.Entity("MPACore.PhoneBook.PhoneBooks.PhoneNumbers.PhoneNumber", b =>
                 {
                     b.HasOne("MPACore.PhoneBook.PhoneBooks.Persons.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId1");
+                        .WithMany("PhoneNumbers")
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Abp.Application.Features.EditionFeatureSetting", b =>
